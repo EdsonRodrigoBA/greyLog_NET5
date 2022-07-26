@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using teste.savelog.api.Models;
 
 namespace teste.savelog.api
 {
@@ -26,6 +27,7 @@ namespace teste.savelog.api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<ILoggerService, LoggerService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
